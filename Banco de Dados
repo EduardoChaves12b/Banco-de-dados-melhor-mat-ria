@@ -1,2 +1,6 @@
 --Ex 1
 SELECT titulo FROM livos;
+
+--ex 2
+SELECT nome FROM autores
+WHERE nascimento <'1900-01-01';
