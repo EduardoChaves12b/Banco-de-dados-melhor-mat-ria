@@ -66,3 +66,7 @@ SELECT autores.nome AS autor, COALESCE(livros.titulo, 'Nenhum livro publicado') 
 FROM autores
 LEFT JOIN livros ON autores.id = livros.autor_id;
 
+--ex 14
+SELECT matriculas.curso, alunos.nome AS aluno
+FROM matriculas
+RIGHT JOIN alunos ON matriculas.aluno_id = alunos.id;
