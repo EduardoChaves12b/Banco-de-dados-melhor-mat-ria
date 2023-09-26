@@ -65,3 +65,17 @@ DELIMITER ;
 
 -----------------------------------------------------------------------------
 
+-- Exercício 5
+
+DELIMITER //
+CREATE PROCEDURE sp_LivrosAteAno(IN anoLimite INT)
+BEGIN
+    SELECT Titulo, Ano_Publicacao
+    FROM Livro
+    WHERE Ano_Publicacao <= anoLimite;
+END;
+//
+DELIMITER ;
+
+-----------------------------------------------------------------------------
+
