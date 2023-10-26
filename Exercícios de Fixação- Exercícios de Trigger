@@ -34,3 +34,25 @@ BEGIN
 END;
 
 ----------------------------------------------------------------------------------------------------------------
+
+EXERCICIO NUMERO 4
+
+USE exercicios_trigger;
+
+DELIMITER $$
+
+CREATE TRIGGER impedirNullOuVazio 
+BEFORE UPDATE 
+ON Clientes 
+FOR EACH ROW
+BEGIN
+    IF NEW.nome IS NULL OR NEW.nome = '' THEN
+        SET NEW.nome = OLD.nome;
+        INSERT INTO Auditoria (mensagem) VALUES ('Uma tentativa de atualização de nome para um valor vazio ou NULL é inválida.');
+    END IF;
+END;
+$$
+
+DELIMITER ;
+
+----------------------------------------------------------------------------------------------------------------
