@@ -8,3 +8,14 @@ insert into Auditória (mensagem)
 values ('Cliente novo');
 
 ----------------------------------------------------------------------------------------------------------------
+
+EXERCICIO NUMERO 2
+
+create trigger insert_exc_clientes before insert 
+on Clientes
+for each row
+insert into Auditória (mensagem)
+values ('Tentativa de exclusão');
+
+
+----------------------------------------------------------------------------------------------------------------
